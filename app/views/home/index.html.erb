@@ -1,0 +1,13 @@
+<h1>Action Chat</h1>
+<p>Hello <%= current_user.email %></p>
+
+<h3>Chat Room</h3>
+<p data-chat-room="Main Room"></p>
+
+<h3>What is going on?</h3>
+<div id='chat'>
+  <app></app>
+</div>
+
+<%= include_gon %>
+<%= javascript_pack_tag 'chat_vue' %>
