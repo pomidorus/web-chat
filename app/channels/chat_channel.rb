@@ -6,6 +6,7 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def chat(data)
+    current_user.messages.create(body: data['body'])
     ActionCable.server.broadcast(CHAT_CHANNEL, data)
   end
 end

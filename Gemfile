@@ -5,6 +5,9 @@ ruby '3.0.0'
 
 gem 'devise'
 gem 'gon'
+gem 'sidekiq'
+gem 'sidekiq-scheduler'
+gem 'mailcatcher'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
@@ -49,6 +52,8 @@ group :development do
 end
 
 group :test do
+  gem 'rspec-rails', '~> 5.0.0'
+  gem 'factory_bot'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
