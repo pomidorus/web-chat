@@ -22,6 +22,15 @@ RSpec.describe 'MessagesStatsService' do
   end
 
   context 'when user has messages' do
+    let!(:message_05) { create(:message, id: 5, user: user) }
+
+    it 'returns correct last message day' do
+      expect(MessagesStatsService.new(user).last_message_date).to eq Date.today.strftime('%dnd of %B')
+    end
+  end
+
+
+  context 'when user has messages' do
     it 'returns correct weekly count' do
       expect(MessagesStatsService.new(user).weekly_count).to eq 1
     end

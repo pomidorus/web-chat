@@ -16,4 +16,8 @@ class MessagesStatsService
   def last_message
     @last_message ||= user.messages.order('created_at DESC').first
   end
+
+  def last_message_date
+    last_message.created_at.strftime('%dnd of %B')
+  end
 end
