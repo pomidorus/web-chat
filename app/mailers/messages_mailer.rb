@@ -3,7 +3,7 @@ class MessagesMailer < ApplicationMailer
 
   def weekly_stats
     @user = params[:user]
-    @stats = MessagesStats.new(@user)
+    @stats = MessagesStatsService.new(@user)
     mail(to: @user.email, subject: 'Chat Weekly Stats')
   end
 end

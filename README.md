@@ -1,24 +1,23 @@
-# README
+# WEB CHAT
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Data Model
 
-Things you may want to cover:
+User - model to holds user email & login details
+Message - model which holds messages pushed by users. Belongs to user model
 
-* Ruby version
+### AUTH
 
-* System dependencies
+Authentication (log in & sign up) done using devise gem. If email invalid devise will not create an account
 
-* Configuration
+### WS CHAT
 
-* Database creation
+Real time chat is done using action cable & vue js to send messages
 
-* Database initialization
+### Weekly Stats
 
-* How to run the test suite
+Weekly stats emails sends using action mailer & sidekiq scheduler. Cron config is in file sidekiq.yml (for dev purspose cron configured to run every minute).
+To start sidekiq run 'sidekiq' in the terminal. To catch emails run 'mailcatcher' in the terminal
 
-* Services (job queues, cache servers, search engines, etc.)
+### Testing
 
-* Deployment instructions
-
-* ...
+MessagesStatsService covered by unit tests with rspec & factory_bot

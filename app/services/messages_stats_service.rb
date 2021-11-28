@@ -1,4 +1,4 @@
-class MessagesStats
+class MessagesStatsService
   attr_reader :user
 
   def initialize(user)
